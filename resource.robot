@@ -6,8 +6,9 @@ ${loginPage}     https://sprint3r5.wordpress.com
 Goto Login Page
     Maximize Browser Window
     Click Element    //*[@id="masthead"]/button
-    Wait Until Element is Visible     //*[@id="meta-2"]/ul/li[2]/a
+    Wait Until Element Is Visible     //*[@id="meta-2"]/ul/li[2]/a
     Click Link    //*[@id="meta-2"]/ul/li[2]/a
+    Wait Until Element Is Visible    user_login
 
 Fill Login Password
     [arguments]    ${usernameInput}     ${passwordInput}
