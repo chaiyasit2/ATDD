@@ -22,6 +22,6 @@ Test post uncategory entry with image
     Click Element     //*[@id="__attachments-view-107"]/li/div/div
     Click Element    //*[@id="__wp-uploader-id-0"]/div[5]/div/div[2]/button
     #Wait Until Element Is Visible    //*[@id="tinymce"]/p/img
-    Textarea Should Contain     img
+    Textarea Should Contain     tinymce    img 
     Wait Until Element Is Visible    //*[@id="publish"]
     Click Element    //*[@id="publish"]
