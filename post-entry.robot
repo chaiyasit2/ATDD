@@ -27,3 +27,6 @@ Test post uncategory entry with image
     Unselect Frame
     Wait Until Element Is Visible    //*[@id="publish"]
     Click Element    //*[@id="publish"]
+    Go To     ${loginPage}
+    #Wait Until Element Contains     css=.entry-content      สรุปผลการดำเนินงานของบจ. งวดครึ่งปี (F45-1)
+    #Wait Until Element Contains     css=.entry-content      img
