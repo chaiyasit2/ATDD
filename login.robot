@@ -43,7 +43,7 @@ Test login with valid credential and remember me
     Open Browser    ${loginPage}
     Click Element    //*[@id="masthead"]/button
     #Wait Until Element is Visible     //*[@id="meta-2"]/ul/li[2]/a
-    Wait Until Page Contains    Log out
+    #Wait Until Page Contains    Log out
 
 Test login with valid credential and not remember me
     Goto Login Page

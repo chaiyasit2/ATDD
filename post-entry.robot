@@ -12,16 +12,21 @@ Test post uncategory entry with image
     Fill Login Password    sprint3r5    WorkingSoftware
     Wait Until Page Contains    Posts
     Click Element     //*[@id="menu-posts"]/a/div[2]
-    Wait Until Element Is Visible      //*[@id="wpbody-content"]/div[3]/h1/a
-    Click Link    //*[@id="wpbody-content"]/div[3]/h1/a
+    Wait Until Element Is Visible      css=.page-title-action
+    Click Link    css=.page-title-action
     Input Text    title    สรุปผลการดำเนินงานของบจ. งวดครึ่งปี (F45-1)
-    #Wait Until Element Is Visible     tinymce
-    #Input Text   tinymce     สรุปผลการดำเนินงานของบจ. (F45-1)\n??????????????????? SET High Dividend ETF\
+    Select Frame    content_ifr
+    Input Text     //*[@id="tinymce"]   สรุปผลการดำเนินงานของบจ. (F45-1)\n??????????????????? SET High Dividend ETF\n
+    Unselect Frame
     Click Element    insert-media-button
     Wait Until Element Is Visible    //*[@id="__attachments-view-107"]/li/div/div
     Click Element     //*[@id="__attachments-view-107"]/li/div/div
     Click Element    //*[@id="__wp-uploader-id-0"]/div[5]/div/div[2]/button
-    #Wait Until Element Is Visible    //*[@id="tinymce"]/p/img
-    Textarea Should Contain     tinymce    img 
+    Select Frame    content_ifr
+    Wait Until Element Is Visible    //*[@id="tinymce"]/p/img
+    Unselect Frame
     Wait Until Element Is Visible    //*[@id="publish"]
     Click Element    //*[@id="publish"]
+    Go To     ${loginPage}
+    #Wait Until Element Contains     css=.entry-content      สรุปผลการดำเนินงานของบจ. งวดครึ่งปี (F45-1)
+    #Wait Until Element Contains     css=.entry-content      img
