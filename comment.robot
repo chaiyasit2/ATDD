@@ -9,8 +9,6 @@ Resource    resource.robot
 
 *** Test Cases ***
 Comment
-
-    # Go To     ${loginPage}
     Wait Until Page Contains    Leave a comment
     Click Link    Leave a comment
     Focus    //*[@id="comment"]
@@ -19,3 +17,12 @@ Comment
     Input Text    //*[@id="email"]    karnpot@set.or.th
     Input Text    //*[@id="author"]    Gap
     Click Button    comment-submit
+Approve Comment
+    Fill Login Password    sprint3r5    WorkingSoftware
+    Wait Until Page Contains    Posts
+    Click Element     //*[@id="menu-posts"]/a/div[2]
+    Wait Until Element Is Visible      css=.post-com-count-pending
+    Click Element    css=.post-com-count-pending
+    Wait Until Element Is Visible    css=.comment
+    Mouse Over    css=.comment
+    Click Link    Approve
